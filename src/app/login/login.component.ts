@@ -21,7 +21,12 @@ export class LoginComponent implements OnInit {
     this.authSerice.onLogin(this.form.value).subscribe(
       (res) => {
         // localStorage.setItem('tokens',res)
-        // this.router.navigateByUrl('')
+        // if (res.designation == 'Student') {
+        //   this.router.navigateByUrl('/Student');
+        // } else if (res.designaiton == 'Faculty') {
+        //   this.router.navigateByUrl('/Faculty');
+        // }
+        // this.router.navigateByUrl('/Blog')
         console.log(res);
       },
 
