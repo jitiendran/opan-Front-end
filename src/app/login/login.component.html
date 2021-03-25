@@ -1,1 +1,19 @@
-<div class="login"></div>
+<div class="login">
+  <div class="login-wrapper">
+    <div class="img-wrapper"></div>
+    <div class="login-content-wrapper">
+      <h3>Login</h3>
+      <form [formGroup]="form" (ngSubmit)="onSubmit()">
+        <div class="row">
+          <label for="">Username</label>
+          <input formControlName="Username" type="text" />
+        </div>
+        <div class="row">
+          <label for="">Password</label>
+          <input formControlName="Password" type="password" />
+        </div>
+        <button type="submit" [disabled]="!form.valid">Login</button>
+      </form>
+    </div>
+  </div>
+</div>
