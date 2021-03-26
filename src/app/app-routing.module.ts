@@ -23,7 +23,11 @@ const routes: Routes = [
       { path: 'Notifications/:nid', component: ShownotificationComponent },
     ],
   },
-  { path: 'Faculty', component: FacultyComponent },
+  {
+    path: 'Faculty/:id/:name',
+    component: FacultyComponent,
+    canActivate: [AuthGuard],
+  },
 ];
 
 @NgModule({

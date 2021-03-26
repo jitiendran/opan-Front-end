@@ -31,7 +31,9 @@ export class LoginComponent implements OnInit {
             `/Student/${this.Response.UserId}/${this.Response.UserName}`
           );
         } else if (this.Response.Designation !== 'student') {
-          this.router.navigateByUrl('/Faculty');
+          this.router.navigateByUrl(
+            `/Faculty/${this.Response.UserId}/${this.Response.UserName}`
+          );
         }
         console.log(res);
       },

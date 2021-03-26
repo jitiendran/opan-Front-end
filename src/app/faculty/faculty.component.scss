@@ -1,0 +1,57 @@
+.row {
+  display: flex;
+  background: #1e1d2b;
+  .nav {
+    width: 20vw;
+  }
+  .student {
+    width: 80vw;
+    display: flex;
+    flex-direction: column;
+  }
+  .from-wrapper {
+    display: flex;
+    width: 80%;
+    align-items: center;
+    justify-content: center;
+    padding: 1em;
+    form {
+      padding: 2em;
+      width: 30vw;
+      background-color: #fff;
+      border-radius: 15px;
+      .rows {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        margin-bottom: 1em;
+        label {
+          font-size: 1.3em;
+          font-weight: 500;
+        }
+        input {
+          font-size: 1.2em;
+          outline: none;
+          border: 2px solid #1e1d2b;
+          border-radius: 0.3em;
+          padding: 0.3em 0.7em;
+        }
+      }
+      .btn-wrap {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        button {
+          padding: 0.5em 1em;
+          font-size: 1.2em;
+          text-transform: uppercase;
+          cursor: pointer;
+          &:disabled {
+            cursor: not-allowed;
+          }
+        }
+      }
+    }
+  }
+}

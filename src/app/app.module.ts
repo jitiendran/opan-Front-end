@@ -14,6 +14,7 @@ import { ApprovalComponent } from './student/approval/approval.component';
 import { DashboardComponent } from './student/dashboard/dashboard.component';
 import { HeaderComponent } from './student/header/header.component';
 import { ShownotificationComponent } from './student/shownotification/shownotification.component';
+import { FnavbarComponent } from './fnavbar/fnavbar.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { ShownotificationComponent } from './student/shownotification/shownotifi
     DashboardComponent,
     HeaderComponent,
     ShownotificationComponent,
+    FnavbarComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,1 +1,24 @@
-<p>faculty works!</p>
+<div class="row">
+  <div class="nav">
+    <app-fnavbar></app-fnavbar>
+  </div>
+  <div class="from-wrapper">
+    <form [formGroup]="from" (ngSubmit)="onSubmit()">
+      <div class="rows">
+        <label for="Message">Message</label>
+        <input type="text" formControlName="Message" />
+      </div>
+      <div class="rows">
+        <label for="">Attachment</label>
+        <input type="text" formControlName="AttachmentURL" />
+      </div>
+      <div class="rows">
+        <label for="">Year</label>
+        <input type="number" formControlName="year" />
+      </div>
+      <div class="btn-wrap">
+        <button [disabled]="!from.valid">post</button>
+      </div>
+    </form>
+  </div>
+</div>
