@@ -42,15 +42,15 @@ $mainColor: #51ffce;
       p {
         font-size: 1.3em;
       }
-      &:hover {
-        background-color: $mainColor;
-        span {
-          color: white;
-        }
-        p {
-          color: white;
-        }
-      }
     }
+  }
+}
+.active {
+  background-color: $mainColor;
+  span {
+    color: white;
+  }
+  p {
+    color: white;
   }
 }

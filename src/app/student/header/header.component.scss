@@ -1,0 +1,23 @@
+.header {
+  padding: 1em;
+  float: right;
+  display: flex;
+  align-items: center;
+  span {
+    cursor: pointer;
+    font-size: 1.6em;
+  }
+  .profile-wrapper {
+    margin-left: 3em;
+    display: flex;
+    align-items: center;
+    span {
+      margin-right: 0.3em;
+      font-size: 2em;
+    }
+    p {
+      font-size: 1.2em;
+      font-weight: 500;
+    }
+  }
+}

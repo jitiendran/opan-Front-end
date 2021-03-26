@@ -1,3 +1,6 @@
+import { DashboardComponent } from './student/dashboard/dashboard.component';
+import { NotificationComponent } from './student/notification/notification.component';
+import { ApprovalComponent } from './student/approval/approval.component';
 import { AuthGuard } from './auth.guard';
 import { FacultyComponent } from './faculty/faculty.component';
 import { StudentComponent } from './student/student.component';
@@ -13,9 +16,9 @@ const routes: Routes = [
     component: StudentComponent,
     canActivate: [AuthGuard],
     children: [
-      { path: '', component: StudentComponent },
-      { path: 'Approval' },
-      { path: 'Notifications' },
+      { path: '', component: DashboardComponent },
+      { path: 'Approval', component: ApprovalComponent },
+      { path: 'Notifications', component: NotificationComponent },
     ],
   },
   { path: 'Faculty', component: FacultyComponent },

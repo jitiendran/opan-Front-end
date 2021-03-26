@@ -9,6 +9,10 @@ import { LoginComponent } from './login/login.component';
 import { StudentComponent } from './student/student.component';
 import { FacultyComponent } from './faculty/faculty.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { NotificationComponent } from './student/notification/notification.component';
+import { ApprovalComponent } from './student/approval/approval.component';
+import { DashboardComponent } from './student/dashboard/dashboard.component';
+import { HeaderComponent } from './student/header/header.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +21,10 @@ import { NavbarComponent } from './navbar/navbar.component';
     StudentComponent,
     FacultyComponent,
     NavbarComponent,
+    NotificationComponent,
+    ApprovalComponent,
+    DashboardComponent,
+    HeaderComponent,
   ],
   imports: [
     BrowserModule,

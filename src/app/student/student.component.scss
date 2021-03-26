@@ -5,23 +5,5 @@
   }
   .student {
     width: 80vw;
-    .header {
-      padding: 1em;
-      float: right;
-      display: flex;
-      align-items: center;
-      span {
-        font-size: 1.6em;
-      }
-      .profile-wrapper {
-        margin-left: 3em;
-        display: flex;
-        align-items: center;
-        span {
-          margin-right: 0.3em;
-          font-size: 2em;
-        }
-      }
-    }
   }
 }
