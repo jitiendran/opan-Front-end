@@ -7,6 +7,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class StudentserviceService {
   constructor(private route: ActivatedRoute, private http: HttpClient) {}
+  notifications = [];
   notificationUrl = '';
   user: { Rid: number; Name: string } = { Rid: 0, Name: '' };
   getNotification(Id: number) {

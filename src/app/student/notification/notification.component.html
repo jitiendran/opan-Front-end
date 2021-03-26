@@ -4,12 +4,17 @@
     <span class="material-icons"> circle_notifications </span>
   </div>
   <div class="notification-wrapper">
-    <div class="notify-short-wrapper">
-      <h3 class="from">Surya</h3>
-      <p class="msg">This is some important info about</p>
-      <p class="time">12:00</p>
+    <div *ngIf="isThere">
+      <div class="notify-short-wrapper" *ngFor="let notify of notifications">
+        <h3 class="from">Surya</h3>
+        <p class="msg">This is some important info about</p>
+        <p class="time">12:00</p>
+      </div>
     </div>
-    <div class="notify-short-wrapper">
+    <div *ngIf="!isThere">
+      <p class="not-avail">Notifications is not available</p>
+    </div>
+    <!-- <div class="notify-short-wrapper">
       <h3 class="from">Angular Community</h3>
       <p class="msg">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima,
@@ -18,6 +23,6 @@
         maxime dignissimos unde.
       </p>
       <p class="time">12:00</p>
-    </div>
+    </div> -->
   </div>
 </div>
