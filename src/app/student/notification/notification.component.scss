@@ -1,0 +1,43 @@
+$mainColor: #51ffce;
+.notification {
+  padding: 2em;
+  .title {
+    display: flex;
+    width: 10em;
+    align-items: center;
+    h3 {
+      margin-right: 0.5em;
+      border-bottom: 3px solid $mainColor;
+    }
+    span {
+      color: red;
+    }
+  }
+  .notification-wrapper {
+    display: flex;
+    flex-flow: column wrap;
+    .notify-short-wrapper {
+      cursor: pointer;
+      margin-top: 1em;
+      border: 2px solid gainsboro;
+      border-radius: 10px;
+      padding: 0.7em;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      .from {
+        font-weight: 600;
+        width: 10em;
+      }
+      .msg {
+        font-size: 1.1em;
+        font-weight: 500;
+        width: 45em;
+        color: rgb(63, 63, 63);
+      }
+      .time {
+        font-weight: 500;
+      }
+    }
+  }
+}
