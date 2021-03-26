@@ -14,17 +14,47 @@ export class HeaderComponent implements OnInit {
     private route: ActivatedRoute,
     private stud: StudentserviceService
   ) {}
-
+  Notifications: {
+    attachmentURL: string;
+    message: string;
+    sender: string;
+    time: any;
+    status: boolean;
+  }[] = [
+    {
+      attachmentURL: '',
+      message: '',
+      sender: '',
+      time: '',
+      status: false,
+    },
+  ];
   ngOnInit(): void {
     this.user = {
       Rid: this.route.snapshot.params['id'],
       Name: this.route.snapshot.params['name'],
     };
     this.stud.user = this.user;
+    this.stud.Notifications = this.Notifications;
   }
+  Response: any;
   onNotification() {
-    this.stud.getNotification(this.user.Rid).subscribe(
-      (res) => console.log(res),
+    this.stud.getNotification(this.user).subscribe(
+      (res) => {
+        this.Response = res;
+        console.log(this.Response);
+        for (let i = 0; i < this.Response.length; i++) {
+          this.Notifications.push({
+            attachmentURL: this.Response[i].attachmentURL,
+            message: this.Response[i].message,
+            sender: this.Response[i].sender,
+            time: this.Response[i].time,
+            status: this.Response[i].status,
+          });
+        }
+
+        console.log('This is : ' + this.Response[0].time);
+      },
       (error) => console.error(error)
     );
     this.router.navigate(['Notifications'], { relativeTo: this.route });

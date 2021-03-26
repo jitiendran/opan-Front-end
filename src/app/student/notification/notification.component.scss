@@ -9,9 +9,10 @@ $mainColor: #51ffce;
     display: flex;
     width: 10em;
     align-items: center;
+    color: #fdfdfd;
     h3 {
+      color: #fdfdfd;
       margin-right: 0.5em;
-      border-bottom: 3px solid $mainColor;
     }
     span {
       color: red;
@@ -24,6 +25,7 @@ $mainColor: #51ffce;
       cursor: pointer;
       margin-top: 1em;
       border: 2px solid gainsboro;
+      background: #fdfdfd;
       border-radius: 10px;
       padding: 0.7em;
       display: flex;
@@ -32,14 +34,16 @@ $mainColor: #51ffce;
       .from {
         font-weight: 600;
         width: 10em;
+        color: #000;
       }
       .msg {
         font-size: 1.1em;
         font-weight: 500;
         width: 45em;
-        color: rgb(63, 63, 63);
+        color: #000;
       }
       .time {
+        color: #000;
         font-weight: 500;
       }
     }

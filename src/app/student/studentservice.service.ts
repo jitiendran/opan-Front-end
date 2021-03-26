@@ -7,10 +7,24 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class StudentserviceService {
   constructor(private route: ActivatedRoute, private http: HttpClient) {}
-  notifications = [];
-  notificationUrl = '';
+  Notifications: {
+    attachmentURL: string;
+    message: string;
+    sender: string;
+    time: any;
+    status: boolean;
+  }[] = [
+    {
+      attachmentURL: '',
+      message: '',
+      sender: '',
+      time: '',
+      status: false,
+    },
+  ];
+  notificationUrl = 'http://localhost:3000/incomingnotification';
   user: { Rid: number; Name: string } = { Rid: 0, Name: '' };
-  getNotification(Id: number) {
-    return this.http.post(this.notificationUrl, Id);
+  getNotification(user: { Rid: number; Name: string }) {
+    return this.http.post(this.notificationUrl, user);
   }
 }

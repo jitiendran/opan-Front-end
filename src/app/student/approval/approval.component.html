@@ -1,1 +1,21 @@
-<p>approval works!</p>
+<div class="approval">
+  <h3>Approval Stats</h3>
+  <div class="table-wrapper">
+    <div class="col-names">
+      <h4>S.NO</h4>
+      <h4>Document</h4>
+      <h4>Status</h4>
+    </div>
+    <div class="row" *ngFor="let item of table">
+      <p>{{ item.no }}</p>
+      <p>{{ item.doc }}</p>
+      <div class="status">
+        <p
+          [style.background]="item.status === 'Approved' ? 'lightgreen' : 'red'"
+        >
+          {{ item.status }}
+        </p>
+      </div>
+    </div>
+  </div>
+</div>

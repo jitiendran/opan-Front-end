@@ -5,10 +5,16 @@
   </div>
   <div class="notification-wrapper">
     <div *ngIf="isThere">
-      <div class="notify-short-wrapper" *ngFor="let notify of notifications">
-        <h3 class="from">Surya</h3>
-        <p class="msg">This is some important info about</p>
-        <p class="time">12:00</p>
+      <div class="notify-short-wrapper" *ngFor="let notify of Notifications">
+        <h3 class="from" [ngStyle]="{ fontWeight: notify.status ? 400 : 700 }">
+          {{ notify.sender }}
+        </h3>
+        <p class="msg" [ngStyle]="{ fontWeight: notify.status ? 400 : 700 }">
+          {{ notify.message }}
+        </p>
+        <p class="time" [ngStyle]="{ fontWeight: notify.status ? 400 : 700 }">
+          {{ notify.time }}
+        </p>
       </div>
     </div>
     <div *ngIf="!isThere">
