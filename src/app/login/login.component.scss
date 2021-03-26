@@ -75,6 +75,7 @@ $mainColor: #51ffce;
           cursor: pointer;
           &:disabled {
             background: gainsboro;
+            cursor: not-allowed;
           }
         }
       }
