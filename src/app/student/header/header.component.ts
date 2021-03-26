@@ -15,6 +15,7 @@ export class HeaderComponent implements OnInit {
     private stud: StudentserviceService
   ) {}
   Notifications: {
+    id: string;
     attachmentURL: string;
     message: string;
     sender: string;
@@ -22,6 +23,7 @@ export class HeaderComponent implements OnInit {
     status: boolean;
   }[] = [
     {
+      id: '',
       attachmentURL: '',
       message: '',
       sender: '',
@@ -42,9 +44,12 @@ export class HeaderComponent implements OnInit {
     this.stud.getNotification(this.user).subscribe(
       (res) => {
         this.Response = res;
+        console.log('This is : ' + this.Response);
+        this.stud.notifyClicked = true;
         console.log(this.Response);
         for (let i = 0; i < this.Response.length; i++) {
           this.Notifications.push({
+            id: this.Response[i].nid,
             attachmentURL: this.Response[i].attachmentURL,
             message: this.Response[i].message,
             sender: this.Response[i].sender,
@@ -52,8 +57,6 @@ export class HeaderComponent implements OnInit {
             status: this.Response[i].status,
           });
         }
-
-        console.log('This is : ' + this.Response[0].time);
       },
       (error) => console.error(error)
     );

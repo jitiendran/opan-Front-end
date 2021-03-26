@@ -5,7 +5,11 @@
   </div>
   <div class="notification-wrapper">
     <div *ngIf="isThere">
-      <div class="notify-short-wrapper" *ngFor="let notify of Notifications">
+      <div
+        class="notify-short-wrapper"
+        *ngFor="let notify of Notifications"
+        (click)="onClicked(notify.id)"
+      >
         <h3 class="from" [ngStyle]="{ fontWeight: notify.status ? 400 : 700 }">
           {{ notify.sender }}
         </h3>
@@ -20,15 +24,5 @@
     <div *ngIf="!isThere">
       <p class="not-avail">Notifications is not available</p>
     </div>
-    <!-- <div class="notify-short-wrapper">
-      <h3 class="from">Angular Community</h3>
-      <p class="msg">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima,
-        corporis repellat? Cumque, enim obcaecati ad possimus porro odit
-        expedita adipisci corporis perspiciatis omnis vero eius deleniti? Fugit
-        maxime dignissimos unde.
-      </p>
-      <p class="time">12:00</p>
-    </div> -->
   </div>
 </div>

@@ -8,6 +8,7 @@ import { ActivatedRoute } from '@angular/router';
 export class StudentserviceService {
   constructor(private route: ActivatedRoute, private http: HttpClient) {}
   Notifications: {
+    id: string;
     attachmentURL: string;
     message: string;
     sender: string;
@@ -15,6 +16,7 @@ export class StudentserviceService {
     status: boolean;
   }[] = [
     {
+      id: '',
       attachmentURL: '',
       message: '',
       sender: '',
@@ -22,9 +24,17 @@ export class StudentserviceService {
       status: false,
     },
   ];
+  notifyClicked: boolean = false;
   notificationUrl = 'http://localhost:3000/incomingnotification';
+  seenURL = 'http://localhost:3000/seennotification';
   user: { Rid: number; Name: string } = { Rid: 0, Name: '' };
   getNotification(user: { Rid: number; Name: string }) {
     return this.http.post(this.notificationUrl, user);
+  }
+  getuserNoftify(id: string) {
+    return this.Notifications.find((data) => data.id === id);
+  }
+  messageSeen(ID: { nid: string; Rid: string }) {
+    return this.http.post(this.seenURL, ID);
   }
 }

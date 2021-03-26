@@ -13,6 +13,7 @@ import { NotificationComponent } from './student/notification/notification.compo
 import { ApprovalComponent } from './student/approval/approval.component';
 import { DashboardComponent } from './student/dashboard/dashboard.component';
 import { HeaderComponent } from './student/header/header.component';
+import { ShownotificationComponent } from './student/shownotification/shownotification.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { HeaderComponent } from './student/header/header.component';
     ApprovalComponent,
     DashboardComponent,
     HeaderComponent,
+    ShownotificationComponent,
   ],
   imports: [
     BrowserModule,

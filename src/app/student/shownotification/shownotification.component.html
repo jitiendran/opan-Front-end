@@ -1,0 +1,24 @@
+<div class="wrap">
+  <div class="show">
+    <div class="row-1">
+      <div class="row">
+        <label for="Reciever">Reciever</label>
+        <h3>{{ Notification.sender }}</h3>
+      </div>
+      <div class="row">
+        <label for="Reciever">Time</label>
+        <h3>{{ Notification.time }}</h3>
+      </div>
+    </div>
+    <div class="row">
+      <label for="Reciever">Message</label>
+      <h3>
+        {{ Notification.message }}
+      </h3>
+    </div>
+    <div class="row">
+      <label for="Reciever">Attachment</label>
+      <a href="#">{{ Notification.attachmentURL }}</a>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,24 @@
+.wrap {
+  padding: 2em;
+  .show {
+    display: flex;
+    flex-direction: column;
+    background: #fdfdfd;
+    padding: 1em;
+    border-radius: 15px;
+    .row {
+      display: flex;
+      gap: 3em;
+    }
+    .row-1 {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      .row {
+        display: flex;
+        align-items: center;
+      }
+      margin-bottom: 3em;
+    }
+  }
+}
