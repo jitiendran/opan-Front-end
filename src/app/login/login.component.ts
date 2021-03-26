@@ -11,29 +11,35 @@ import { HttpErrorResponse } from '@angular/common/http';
 })
 export class LoginComponent implements OnInit {
   form: FormGroup = new FormGroup({
-    Username: new FormControl(null, Validators.required),
+    Rid: new FormControl(null, Validators.required),
     Password: new FormControl(null, Validators.required),
   });
+  Response: any;
   constructor(private authSerice: AuthserviceService, private router: Router) {}
 
   ngOnInit(): void {}
   onSubmit() {
+    console.log(this.form.value);
     this.authSerice.onLogin(this.form.value).subscribe(
       (res) => {
-        // localStorage.setItem('tokens',res)
-        // if (res.designation == 'Student') {
-        //   this.router.navigateByUrl('/Student');
-        // } else if (res.designaiton == 'Faculty') {
-        //   this.router.navigateByUrl('/Faculty');
-        // }
-        // this.router.navigateByUrl('/Blog')
+        console.log('hi');
+        this.Response = res;
+        localStorage.setItem('token', this.Response.token);
+        // console.log(this.Response.UserId);
+        if (this.Response.Designation === 'student') {
+          this.router.navigateByUrl(
+            `/Student/${this.Response.UserId}/${this.Response.UserName}`
+          );
+        } else if (this.Response.Designation !== 'student') {
+          this.router.navigateByUrl('/Faculty');
+        }
         console.log(res);
       },
 
       (error) => {
         if (error instanceof HttpErrorResponse) {
           if (error.status === 401) {
-            this.router.navigateByUrl('/');
+            this.router.navigateByUrl('/Login');
           }
         }
       }

@@ -5,8 +5,8 @@ import { Injectable } from '@angular/core';
 })
 export class AuthserviceService {
   constructor(private http: HttpClient) {}
-  loginUrl = '';
-  onLogin(data: { Username: string; Password: string }) {
+  loginUrl = 'http://localhost:3000/login';
+  onLogin(data: { Rid: string; Password: string }) {
     return this.http.post(this.loginUrl, data);
   }
   getToken() {
